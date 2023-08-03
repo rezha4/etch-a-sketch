@@ -1,0 +1,14 @@
+.container {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pixel {
+    background-color: pink;
+    border: 1px solid black;
+    width: 196px;
+    height: 200px;
+}
