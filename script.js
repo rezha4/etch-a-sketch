@@ -1,27 +1,35 @@
 const container = document.querySelector(".container");
-let gridSize = 22;
-let size = gridSize * gridSize;
-let pixelSize = 800 / gridSize;
 
-console.log(size);
+const button = document.querySelector("button");
+button.addEventListener("click", () => {
+    gridSize = prompt("Please enter board size = ");
+    //need to loop until input is indeed a number between 1-100
+    console.log(gridSize);
+});
 
-do {
-    const pixels = document.createElement("div");
-    pixels.style.width = `${pixelSize.toString()}px`;
-    pixels.style.height = `${pixelSize.toString()}px`;
-    console.log(pixelSize);
-    container.appendChild(pixels);
-    size--;
-} while (size != 0);
+drawBoard(33);
+changeColor();
 
-const pixels = document.querySelectorAll(".container div");
-pixels.forEach((pixel) => {
+function drawBoard(gridSize) {
+    let size = gridSize * gridSize;
+    let pixelSize = 800 / gridSize;
+    do {
+        const pixels = document.createElement("div");
+        pixels.style.width = `${pixelSize.toString()}px`;
+        pixels.style.height = `${pixelSize.toString()}px`;
+        container.appendChild(pixels);
+        size--;
+    } while (size != 0);
+}
+
+function changeColor() {
+    const pixels = document.querySelectorAll(".container div");
+    pixels.forEach((pixel) => {
     pixel.addEventListener('mouseover', () => {
         pixel.style.backgroundColor = "black";
     });
 });
-
-
+}
 
 
 /*
