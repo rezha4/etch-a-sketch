@@ -1,22 +1,18 @@
 .container {
     border: solid;
-    width: 400px;
-    height: 400px;
+    width: 800px;
+    height: 800px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
 }
 
-.pixel {
+.container div {
     background-color: pink;
     border: 1px solid black;
-    width: 195px;
-    height: 200px;
+    width: 20px;
+    height: 20px;
     margin: 0;
     padding: 0;
-}
-
-.container {
-    
 }
