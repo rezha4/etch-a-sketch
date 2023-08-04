@@ -1,13 +1,32 @@
 const container = document.querySelector(".container");
+let boardSize = 20;
 
-const button = document.querySelector("button");
-button.addEventListener("click", () => {
-    gridSize = prompt("Please enter board size = ");
-    //need to loop until input is indeed a number between 1-100
-    console.log(gridSize);
+const resetButton = document.querySelector("#reset");
+resetButton.addEventListener("click", () => {
+    let pixels = document.querySelectorAll(".container div");
+    pixels.forEach((pixel) => {
+        pixel.remove();
+    })
+    drawBoard(boardSize);
+    changeColor();
 });
 
-drawBoard(33);
+const sizeButton = document.querySelector("#size");
+sizeButton.addEventListener("click", () => {
+    let pixels = document.querySelectorAll(".container div");
+    pixels.forEach((pixel) => {
+        pixel.remove();
+    }); //make this a function (removeBoard())
+    do {
+        boardSize = prompt("Enter a number between 1-100");
+    } while (boardSize > 100 || boardSize < 1);
+
+    drawBoard(boardSize);
+    changeColor();
+    
+});
+
+drawBoard(boardSize);
 changeColor();
 
 function drawBoard(gridSize) {
