@@ -1,6 +1,6 @@
 const container = document.querySelector(".container");
-
-let size = 16*16;
+let i = 16;
+let size = i*i;
 
 console.log(size);
 
@@ -10,3 +10,10 @@ do {
     console.log("tes");
     size--;
 } while (size != 0);
+
+const pixels = document.querySelectorAll(".container div");
+pixels.forEach((pixel) => {
+    pixel.addEventListener('mouseover', () => {
+        pixel.style.cssText = "background-color: black;";
+    });
+});
